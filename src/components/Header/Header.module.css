@@ -1,0 +1,17 @@
+.header {
+  grid-area: h;
+  background-color: green;
+}
+.header img {
+  width: 50px;
+}
+a.activeLink {
+  color: gold;
+}
+.loginBlock {
+  float: right;
+  color: white;
+}
+.loginBlock a {
+  color: white;
+}

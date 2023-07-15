@@ -1,0 +1,15 @@
+.header_image img {
+  width: 100%;
+  height: 300px;
+}
+.userData {
+  padding: 10px;
+}
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.userAvatar img {
+  width: 80px;
+}

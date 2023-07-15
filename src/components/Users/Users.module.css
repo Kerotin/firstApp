@@ -1,0 +1,41 @@
+.users {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+}
+.usersContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+  width: 70px;
+}
+.userAvatar {
+  width: 60px;
+  border-radius: 50%;
+}
+.rightContainer {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 5px 10px 0px 10px;
+}
+.contentLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contentRight {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
