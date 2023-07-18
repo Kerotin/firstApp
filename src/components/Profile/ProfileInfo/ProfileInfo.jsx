@@ -1,13 +1,25 @@
 import React from "react";
 import s from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloader";
-// import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWhithHooks from "./ProfileStatusWithHooks";
+import userAvatar from "./../../../assets/images/userAvatar.jpg";
 
-function ProfileInfo({ profile, status, updateUserStatus }) {
+function ProfileInfo({
+  profile,
+  status,
+  updateUserStatus,
+  isOwner,
+  savePhoto,
+}) {
   if (!profile) {
     return <Preloader />;
   }
+
+  const onMainPhotoSelected = (e) => {
+    if (e.target.files.length) {
+      savePhoto(e.target.files[0]);
+    }
+  };
 
   return (
     <div>
@@ -20,10 +32,12 @@ function ProfileInfo({ profile, status, updateUserStatus }) {
       <div className={s.user}>
         <div className={s.userAvatar}>
           <img
-            src={profile.photos.large}
+            src={profile.photos.large || userAvatar}
+            className={s.mainPhoto}
             // src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
             alt="avatar"
           />
+          {isOwner && <input type="file" onChange={onMainPhotoSelected} />}
         </div>
         <div className={s.userData}>
           <div className="user-name">Имя: {profile.fullName}</div>
