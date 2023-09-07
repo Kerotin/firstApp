@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
@@ -40,7 +40,6 @@ class App extends Component {
   componentDidMount() {
     this.props.initializeApp();
   }
-
   render() {
     if (!this.props.initialized) {
       return <Preloader />;
@@ -79,6 +78,7 @@ class App extends Component {
             <Route path="/friends" element={<Friends />} />
             <Route path="/users" element={<UsersContainer />} />
             <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Navigate to="/profile" />} />
           </Routes>
         </div>
       </div>
