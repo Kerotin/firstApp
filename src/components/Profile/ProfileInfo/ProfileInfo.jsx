@@ -5,14 +5,14 @@ import ProfileStatusWhithHooks from "./ProfileStatusWithHooks";
 import userAvatar from "./../../../assets/images/userAvatar.jpg";
 import ProfileDataForm from "./ProfileDataForm";
 
-function ProfileInfo({
+const ProfileInfo = ({
   profile,
   isOwner,
   savePhoto,
   status,
   updateUserStatus,
   saveProfile,
-}) {
+}) => {
   let [editMode, setEditMode] = useState(false);
 
   if (!profile) {
@@ -70,7 +70,7 @@ function ProfileInfo({
       </div>
     </div>
   );
-}
+};
 
 const ProfileData = ({
   profile,
@@ -89,7 +89,6 @@ const ProfileData = ({
         updateUserStatus={updateUserStatus}
         isOwner={isOwner}
       />
-
       <div>
         <b>Looking for a job</b>: {profile.lookingForAJob ? "yes" : "no"}
       </div>

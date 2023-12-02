@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import s from "./Friend.module.css";
+import React from "react";
+
 const Friend = (props) => {
   return (
     <NavLink>
