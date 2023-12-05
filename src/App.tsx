@@ -10,9 +10,9 @@ import { Header } from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import DialogItem from "./components/Dialogs/DialogItem/DialogItem";
 import Friends from "./components/Friends/Friends";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
+// import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { UsersPage } from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
+// import ProfileContainer from "./components/Profile/ProfileContainer";
 import { LoginPage } from "./components/Login/Login";
 import { compose } from "redux";
 // import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -32,12 +32,12 @@ import { Breadcrumb, Layout, Menu } from "antd";
 const { SubMenu } = Menu;
 const { Content, Footer, Sider } = Layout;
 
-// const DialogsContainer = React.lazy(
-//   () => import("./components/Dialogs/DialogsContainer")
-// );
-// const ProfileContainer = React.lazy(
-//   () => import("./components/Profile/ProfileContainer")
-// );
+const DialogsContainer = React.lazy(
+  () => import("./components/Dialogs/DialogsContainer")
+);
+const ProfileContainer = React.lazy(
+  () => import("./components/Profile/ProfileContainer")
+);
 
 // function withRouter(Component: any) {
 //   function ComponentWithRouterProp(props: any) {
