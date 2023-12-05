@@ -42,7 +42,6 @@ export const Users: React.FC<PropsType> = (props) => {
 
   useEffect(
     () => {
-      debugger;
       const parsed = queryString.parse(search) as QueryParamsType;
 
       let actualPage = currentPage;

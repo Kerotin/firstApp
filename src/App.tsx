@@ -14,6 +14,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { UsersPage } from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import { LoginPage } from "./components/Login/Login";
+import { ChatPage } from "./pages/Chat/ChatPage";
 import { compose } from "redux";
 // import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { connect } from "react-redux";
@@ -28,7 +29,6 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
-import { ChatPage } from "./pages/Chat/ChatPage";
 
 const { SubMenu } = Menu;
 const { Content, Footer, Sider } = Layout;
