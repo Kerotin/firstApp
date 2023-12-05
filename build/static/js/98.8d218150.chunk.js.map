@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/98.8d218150.chunk.js","mappings":"oIAMA,UAJ2B,WACzB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,QACd,C","sources":["pages/Chat/ChatPage.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nconst ChatPage: React.FC = () => {\r\n  return <div>Chat</div>;\r\n};\r\n\r\nexport default ChatPage;\r\n"],"names":["_jsx","children"],"sourceRoot":""}

@@ -10,9 +10,9 @@ import { Header } from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import DialogItem from "./components/Dialogs/DialogItem/DialogItem";
 import Friends from "./components/Friends/Friends";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
+// import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { UsersPage } from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
+// import ProfileContainer from "./components/Profile/ProfileContainer";
 import { LoginPage } from "./components/Login/Login";
 import { compose } from "redux";
 // import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -28,16 +28,18 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
+// import { ChatPage } from "./pages/Chat/ChatPage";
 
 const { SubMenu } = Menu;
 const { Content, Footer, Sider } = Layout;
 
-// const DialogsContainer = React.lazy(
-//   () => import("./components/Dialogs/DialogsContainer")
-// );
-// const ProfileContainer = React.lazy(
-//   () => import("./components/Profile/ProfileContainer")
-// );
+const DialogsContainer = React.lazy(
+  () => import("./components/Dialogs/DialogsContainer")
+);
+const ProfileContainer = React.lazy(
+  () => import("./components/Profile/ProfileContainer")
+);
+const ChatPage = React.lazy(() => import("./pages/Chat/ChatPage"));
 
 // function withRouter(Component: any) {
 //   function ComponentWithRouterProp(props: any) {
@@ -112,8 +114,14 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                   </Menu.Item>
                   <Menu.Item key="4">option2</Menu.Item>
                 </SubMenu>
-                <SubMenu key="sub3" icon={<NotificationOutlined />} title="y P">
-                  <Menu.Item key="5">option1</Menu.Item>
+                <SubMenu
+                  key="sub3"
+                  icon={<NotificationOutlined />}
+                  title="Chat"
+                >
+                  <Menu.Item key="5">
+                    <NavLink to="/chat">Chat</NavLink>
+                  </Menu.Item>
                   <Menu.Item key="6">option2</Menu.Item>
                 </SubMenu>
               </Menu>
@@ -156,6 +164,14 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                   element={<UsersPage pageTitle={"Самураи"} />}
                 />
                 <Route path="/login" element={<LoginPage />} />
+                <Route
+                  path="/chat"
+                  element={
+                    <Suspense fallback={<Preloader />}>
+                      <ChatPage />
+                    </Suspense>
+                  }
+                />
                 <Route path="*" element={<Navigate to="/profile" />} />
               </Routes>
             </Content>
