@@ -2,7 +2,7 @@
   grid-area: h;
   background-color: green;
 }
-.header img {
+.headerImg img {
   width: 50px;
 }
 a.activeLink {

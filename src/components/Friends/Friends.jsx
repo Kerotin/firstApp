@@ -1,4 +1,8 @@
 const Friends = () => {
-  return <div>Friends</div>;
+  return (
+    <div>
+      <div>Friends</div>
+    </div>
+  );
 };
 export default Friends;
